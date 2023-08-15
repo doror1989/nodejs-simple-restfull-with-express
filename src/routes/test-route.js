@@ -1,11 +1,12 @@
 import express from 'express';
+var router = express.Router();
 const winston = require('winston');
 const logger = require('./logger');
 
 logger.info('Service started.');
 
 
-express.get('/test', function(req, res, next) {
+router.get('/test', function(req, res, next) {
     var first_name = 'test';
     var email = 'test@test.com';
     console.log(first_name);
