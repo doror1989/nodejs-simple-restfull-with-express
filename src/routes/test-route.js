@@ -1,4 +1,7 @@
-express.get('/', function(req, res, next) {
+import express from 'express';
+
+
+express.get('/test', function(req, res, next) {
     return ProductModel.find(function (err, products) {
         if (!err) {
             res.render('app', {products: products, root: URL_ROOT});
