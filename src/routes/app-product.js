@@ -2,6 +2,38 @@ import express from 'express';
 var router = express.Router();
 var ProductModel = require('../model/product');
 const URL_ROOT = "http://localhost:3000";
+import http from 'http';
+
+const options = {
+    hostname: 'jsonplaceholder.typicode.com',
+    port: 80, // Default HTTP port
+    path: '/posts/1',
+    method: 'GET'
+};
+
+// Create a request object
+const req = http.request(options, (res) => {
+    let data = '';
+
+    // A chunk of data has been received
+    res.on('data', (chunk) => {
+        data += chunk;
+    });
+
+    // The whole response has been received
+    res.on('end', () => {
+        console.log(data);
+    });
+});
+
+// Handle connection errors
+req.on('error', (error) => {
+    console.error('Request error:', error);
+});
+
+// Send the request
+req.end();
+
 
 fetch('https://jsonplaceholder.typicode.com/posts/1')
     .then(response => {
