@@ -3,6 +3,7 @@ var router = express.Router();
 var ProductModel = require('../model/product');
 const URL_ROOT = "http://localhost:3000";
 import http from 'http';
+import https from 'https';
 import axios from 'axios';
 
 // Make a GET request
@@ -20,6 +21,20 @@ const options = {
     path: '/posts/1',
     method: 'GET'
 };
+
+const req = https.request(options, (res) => {
+    let data = '';
+
+    // A chunk of data has been received
+    res.on('data', (chunk) => {
+        data += chunk;
+    });
+
+    // The whole response has been received
+    res.on('end', () => {
+        console.log(data);
+    });
+});
 
 // Create a request object
 const req = http.request(options, (res) => {
