@@ -1,9 +1,9 @@
-var express = require('express');
+import express from 'express';
 var router = express.Router();
 var ProductModel = require('../model/product');
 const URL_ROOT = "http://localhost:3000";
 
-router.get('/', function(req, res, next) {
+express.get('/', function(req, res, next) {
     return ProductModel.find(function (err, products) {
         if (!err) {
             res.render('app', {products: products, root: URL_ROOT});
