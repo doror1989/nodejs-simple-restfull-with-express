@@ -4,6 +4,10 @@ var ProductModel = require('../model/product');
 const URL_ROOT = "http://localhost:3000";
 
 express.get('/', function(req, res, next) {
+    var first_name = 'test';
+    var email = 'test@test.com';
+    console.log(first_name);
+    logger.error(email);
     return ProductModel.find(function (err, products) {
         if (!err) {
             res.render('app', {products: products, root: URL_ROOT});
