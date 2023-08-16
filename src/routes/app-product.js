@@ -7,6 +7,17 @@ import https from 'https';
 import axios from 'axios';
 import fetch from 'node-fetch'
 
+import got from 'got';
+
+// Make a GET request
+got.get('https://got.typicode.com/posts/1')
+    .then(response => {
+        console.log('GET Response:', response.body);
+    })
+    .catch(error => {
+        console.error('GET Error:', error);
+    });
+
 // Make a GET request
 axios.get('https://jsonplaceholder.typicode.com/posts/1')
     .then(response => {
