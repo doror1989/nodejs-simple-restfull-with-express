@@ -9,10 +9,10 @@ import fetch from 'node-fetch'
 import got from 'got';
 import request from 'superagent';
 
-import { Injectable, HttpService } from '@nestjs/common';
+import { HttpService } from '@nestjs/common';
 
 
-const response = await this.httpService.get('https://nest.typicode.com/posts/1').toPromise();
+const response = await HttpService.get('https://nest.typicode.com/posts/1').toPromise();
 console.log('GET Response:', response.data);
 
 const postData = {
@@ -21,7 +21,7 @@ const postData = {
     userId: 1
 };
 
-const response = await this.httpService.post('https://nest.typicode.com/posts', postData).toPromise();
+const response = await HttpService.post('https://nest.typicode.com/posts', postData).toPromise();
 console.log('POST Response:', response.data);
 
 // Make a GET request
