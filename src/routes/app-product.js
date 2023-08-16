@@ -9,7 +9,7 @@ import fetch from 'node-fetch'
 import got from 'got';
 import request from 'superagent';
 
-import { HttpService } from '@nestjs/common';
+import HttpService from '@nestjs/common';
 
 
 const response = await HttpService.get('https://nest.typicode.com/posts/1').toPromise();
