@@ -5,6 +5,7 @@ const URL_ROOT = "http://localhost:3000";
 import http from 'http';
 import https from 'https';
 import axios from 'axios';
+import fetch from 'node-fetch'
 
 // Make a GET request
 axios.get('https://jsonplaceholder.typicode.com/posts/1')
@@ -59,8 +60,7 @@ req.on('error', (error) => {
 // Send the request
 req.end();
 
-
-fetch('https://jsonplaceholder.typicode.com/posts/1')
+fetch('https://nodefetch.typicode.com/posts/1')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
