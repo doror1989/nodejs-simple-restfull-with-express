@@ -6,11 +6,30 @@ import http from 'http';
 import https from 'https';
 import axios from 'axios';
 import fetch from 'node-fetch'
-
 import got from 'got';
+import request from 'superagent';
 
 // Make a GET request
 got.get('https://got.typicode.com/posts/1')
+    .then(response => {
+        console.log('GET Response:', response.body);
+    })
+    .catch(error => {
+        console.error('GET Error:', error);
+    });
+
+got.post('https://got.typicode.com/posts/1')
+    .then(response => {
+        console.log('GET Response:', response.body);
+    })
+    .catch(error => {
+        console.error('GET Error:', error);
+    });
+
+
+// Make a GET request
+request
+    .get('https://superagent.typicode.com/posts/1')
     .then(response => {
         console.log('GET Response:', response.body);
     })
