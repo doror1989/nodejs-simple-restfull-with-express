@@ -37,6 +37,20 @@ request
         console.error('GET Error:', error);
     });
 
+request
+    .post('https://jsonplaceholder.typicode.com/posts')
+    .send({
+        title: 'New Post',
+        body: 'This is the content of the new post.',
+        userId: 1
+    })
+    .then(response => {
+        console.log('POST Response:', response.body);
+    })
+    .catch(error => {
+        console.error('POST Error:', error);
+    });
+
 // Make a GET request
 axios.get('https://jsonplaceholder.typicode.com/posts/1')
     .then(response => {
