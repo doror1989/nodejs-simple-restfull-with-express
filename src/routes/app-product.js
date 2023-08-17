@@ -2,8 +2,8 @@ import express from 'express';
 var router = express.Router();
 var ProductModel = require('../model/product');
 const URL_ROOT = "http://localhost:3000";
-import http from 'http';
-import https from 'https';
+var http = require('http');
+var https = require('https');
 import axios from 'axios';
 import fetch from 'node-fetch'
 import got from 'got';
@@ -76,7 +76,7 @@ axios.get('https://jsonplaceholder.typicode.com/posts/1')
     });
 
 const options = {
-    hostname: 'jsonplaceholder.typicode.com',
+    hostname: 'httpandhttps.typicode.com',
     port: 80, // Default HTTP port
     path: '/posts/1',
     method: 'GET'
